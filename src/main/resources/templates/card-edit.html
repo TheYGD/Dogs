@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/card/card-styles.css">
+    <!-- <link rel="stylesheet" href="edit-styles.css"> -->
+</head>
+
+<body>
+    <div class="card">
+        <div class="card-top">
+            <div class="card-img-container">
+                <a href="/api/images/1">
+                    <div class="card-img" onclick="display_image(this)"></div>
+                </a>
+            </div>
+            <form class="card-details=-form" action="">
+            
+                <!-- <p><b>Name:</b> <input type="text"></p>
+                <p><b>Breed: </b> Rasa</p>
+                <p><b>Age: </b> Wiek</p>
+                <p><b>BirthDate: </b> 2004-02-12</p>
+                <p><b>Owner: </b> user</p> -->
+                <div class="input-line">
+                    <label for="input-name">Name</label>
+                    <input type="text" id="input-name">
+                </div>
+
+                <div class="input-line">
+                    <label for="input-image">Image</label>
+                    <input type="image" id="input-image">
+                </div>
+
+                <div class="input-line">
+                    <label for="input-breed">Breed</label>
+                    <input type="text" id="input-breed">
+                </div>
+
+                <div class="input-line">
+                    <label for="input-birthdate">Birthdate</label>
+                    <input type="text" id="input-birthdate">
+                </div>
+
+                <div class="input-line">
+                    <label for="input-mother">Mother</label>
+                    <input type="text" id="input-mother">
+                </div>
+
+                <div class="input-line">
+                    <label for="input-father">Father</label>
+                    <input type="text" id="input-father">
+                </div>
+
+            </form>
+        </div>
+
+        <div class="card-buttons">
+            <a href="/index.html"><button onclick="btn_back">Back</button></a>
+            <a><button>Apply</button></a>
+            <a><button>Remove</button></a>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

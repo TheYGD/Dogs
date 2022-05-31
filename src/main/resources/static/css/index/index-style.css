@@ -1,0 +1,95 @@
+body {
+    /* background-color: rgb(228, 221, 204); */
+    background-color: rgb(182, 174, 164);
+}
+
+#title {
+    color: white;
+    font-size: 3.5rem;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* font-weight: lighter; */
+    text-shadow: 1px 1px 0.4rem black;
+    padding: 0.5rem 0;
+}
+
+#dogs-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 3rem;
+    padding: 1rem;
+    padding-bottom: 6rem;
+}
+
+.dog-card {
+    background-color: white;
+    height: 20rem;
+    width: 17rem;
+    margin: 10px;
+    box-shadow: 1px 1px 0.5rem black;
+}
+
+.dog-card * {
+    pointer-events: none;
+}
+
+.dog-card-img-container {
+    height: 14rem;
+    width: 14rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem auto;
+    margin-top: 1.5rem;
+    border-radius: 1%;
+    border: black 0.1rem solid;
+}
+
+.dog-card-name {
+    position: relative;
+    bottom: 1rem;
+    text-align: center;
+    font-size: 2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: lighter;
+    color: black;
+}
+
+.dog-card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.dog-card-details {
+    display: none;
+    position: relative;
+    background-color: white;
+    top: -2rem;
+    margin: 0;
+    box-shadow: 1px 1px 0.5rem black;
+    padding: 1rem 1rem 1rem 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.dog-card:hover .dog-card-details {
+    display: flex;
+}
+
+.dog-card-details p {
+    color: black;
+    margin: 0.3rem;
+
+}
+
+.card-loading-details {
+    width: 3rem;
+    height: 3rem;
+    margin: 0.7rem;
+    animation: rotation 1s infinite ease-in-out;
+}
+
+@keyframes rotation{
+    to{ transform: rotate(360deg); }
+  }
