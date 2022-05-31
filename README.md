@@ -1,4 +1,4 @@
-"# Dogs" 
+# Dogs
 This is web applicaiton with backend made with Spring
 
 It is supposed to store dogs in database (currently in memory),
