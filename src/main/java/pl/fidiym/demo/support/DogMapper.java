@@ -2,8 +2,9 @@ package pl.fidiym.demo.support;
 
 import org.springframework.stereotype.Component;
 import pl.fidiym.demo.domain.dog.Dog;
-import pl.fidiym.demo.domain.dog.DogCardBasic;
+import pl.fidiym.demo.domain.dog.request.DogCardBasic;
 import pl.fidiym.demo.domain.dog.request.DogRequest;
+import pl.fidiym.demo.domain.dog.response.DogCardDetails;
 
 import java.time.LocalDate;
 
@@ -25,5 +26,15 @@ public class DogMapper {
                 dog.getId(),
                 dog.getName(),
                 dog.getImageSource());
+    }
+
+    public DogCardDetails toDogCardDetails(Dog dog) {
+        return new DogCardDetails(
+                dog.getId(),
+                dog.getName(),
+                dog.getBreed(),
+                dog.getBirthDate(),
+                dog.getOwnerUsername()
+        );
     }
 }

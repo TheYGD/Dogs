@@ -3,47 +3,45 @@ package pl.fidiym.demo.repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import pl.fidiym.demo.domain.dog.Dog;
-import pl.fidiym.demo.domain.dog.DogCardBasic;
+import pl.fidiym.demo.domain.dog.request.DogCardBasic;
 import pl.fidiym.demo.support.DogMapper;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Repository
 public class DogRepository {
 
-    private final List<Dog> dogList;
+    private final HashMap<Integer, Dog> dogs;
     @Autowired
     private DogMapper dogMapper;
 
     public DogRepository() {
-        this.dogList = new ArrayList<>();
+        this.dogs = new HashMap<>();
     }
 
     public Optional<Dog> findById(long id) {
-        if (id >= dogList.size() || id < 0) {
+        if (!dogs.containsKey((int)id)) {
             return Optional.empty();
         }
 
-        return Optional.of(dogList.get((int) id));
+        return Optional.of(dogs.get((int) id));
     }
 
     public List<Dog> findAll() {
-        return List.copyOf(dogList);
+        return new LinkedList<Dog>(dogs.values());
     }
 
     public Dog create(Dog dog) {
-        dogList.add(dog);
+        dogs.put(dogs.size(), dog);
         return dog;
     }
 
     public void deleteById(long id) {
-        dogList.remove((int) id);
+        dogs.remove((int) id);
     }
 
     public List<DogCardBasic> findAllDogsCardBasics() {
-        return dogList.stream()
+        return dogs.values().stream()
                 .map(e -> dogMapper.toDogCardBasic(e))
                 .toList();
     }

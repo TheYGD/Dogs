@@ -23,14 +23,14 @@ function show_dogs_details(card) {
     card.innerHTML += temporaryDetailsCard;
     let id = card.id;
 
-    fetch('http://localhost:8080/api/v1/dogs/' + id)
+    fetch('http://localhost:8080/api/v1/dogs/card/' + id)
         .then(response => {
             if (response.ok) {
                 return response.json();
             }
         })
         .then(response => {
-//            console.log(response);
+            console.log(response);
             if (!response) {
                 load_concrete_dog_details(card, failDogDetails);
                 return;
@@ -39,9 +39,9 @@ function show_dogs_details(card) {
             let detailsHeight = 2;
             let responseContent = "<div>";
             for (let attr in response) {
-//                console.log(attr + ": " + response[attr]);
+                console.log(attr + ": " + response[attr]);
                 if (response[attr] != null) {
-                    if (attr == "imageSource" || attr == "id") {
+                    if (attr == "id") {
                         continue;
                     }
 

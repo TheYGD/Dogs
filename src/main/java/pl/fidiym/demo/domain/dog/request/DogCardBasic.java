@@ -1,4 +1,4 @@
-package pl.fidiym.demo.domain.dog;
+package pl.fidiym.demo.domain.dog.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

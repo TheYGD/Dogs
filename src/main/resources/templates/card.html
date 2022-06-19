@@ -16,23 +16,24 @@
                 <a href="/api/images/1"><div class="card-img" onclick="display_image(this)"></div></a>
             </div>
             <div class="card-details">
-                <p><b>Name: </b> Nazwa</p>
-                <p><b>Breed: </b> Rasa</p>
-                <p><b>Age: </b> Wiek</p>
-                <p><b>BirthDate: </b> 2004-02-12</p>
-                <p><b>Mother: </b> matka</p>
-                <p><b>Father: </b> ojciec</p>
-                <p><b>Owner: </b> user</p>
+                <p><b>Name: </b></p>
+                <p><b>Breed: </b></p>
+                <p><b>Age: </b></p>
+                <p><b>BirthDate: </b></p>
+                <p><b>Mother: </b></p>
+                <p><b>Father: </b></p>
+                <p><b>Owner: </b></p>
             </div>
         </div>
 
         <div class="card-buttons">
             <a href="/index.html"><button onclick="btn_back">Back</button></a>
-            <a href="/cards/edit/1"><button onclick="btn_back">Edit</button></a>
-            <a><button>Remove</button></a>
+            <a id="btn-edit"><button onclick="btn_back">Edit</button></a>
+            <a id="btn-remove"><button>Remove</button></a>
         </div>
     </div>
 
+    <script src="/js/card/card.js"> </script>
 </body>
 
 </html>

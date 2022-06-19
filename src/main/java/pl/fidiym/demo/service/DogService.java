@@ -4,8 +4,9 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pl.fidiym.demo.domain.dog.Dog;
-import pl.fidiym.demo.domain.dog.DogCardBasic;
+import pl.fidiym.demo.domain.dog.request.DogCardBasic;
 import pl.fidiym.demo.domain.dog.request.DogRequest;
+import pl.fidiym.demo.domain.dog.response.DogCardDetails;
 import pl.fidiym.demo.repository.DogRepository;
 import pl.fidiym.demo.support.DogMapper;
 import pl.fidiym.demo.support.DogExceptionSupplier;
@@ -68,5 +69,12 @@ public class DogService {
 
     public List<DogCardBasic> getAllDogsCardBasics() {
         return dogRepository.findAllDogsCardBasics();
+    }
+
+    public DogCardDetails getDogsCardDetails(long id) {
+        Dog dog = dogRepository.findById(id)
+                .orElseThrow(exceptionSupplier.dogNotFoundException(id));
+
+        return dogMapper.toDogCardDetails(dog);
     }
 }

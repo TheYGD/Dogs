@@ -5,8 +5,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pl.fidiym.demo.domain.dog.Dog;
-import pl.fidiym.demo.domain.dog.DogCardBasic;
+import pl.fidiym.demo.domain.dog.request.DogCardBasic;
 import pl.fidiym.demo.domain.dog.request.DogRequest;
+import pl.fidiym.demo.domain.dog.response.DogCardDetails;
 import pl.fidiym.demo.service.DogService;
 
 import java.util.List;
@@ -34,6 +35,12 @@ public class DogApi {
     public ResponseEntity<List<DogCardBasic>> getAllDogsCardBasics() {
         List<DogCardBasic> dogsNames = dogService.getAllDogsCardBasics();
         return ResponseEntity.status(HttpStatus.OK).body(dogsNames);
+    }
+
+    @GetMapping("/card/{id}")
+    public ResponseEntity<DogCardDetails> getDogsCardDetails(@PathVariable long id) {
+        DogCardDetails dogsDetails = dogService.getDogsCardDetails(id);
+        return ResponseEntity.status(HttpStatus.OK).body(dogsDetails);
     }
 
     @PostMapping
